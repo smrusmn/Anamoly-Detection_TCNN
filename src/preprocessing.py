@@ -124,3 +124,13 @@ X_train_split, X_val_split, y_train_split, y_val_split = train_test_split(X_trai
                                                                           random_state=42)
 print(f'X_train_split shape is : {X_train_split.shape} \n y_train_split shape is : {y_train_split.shape} \n '
       f'X_val_split shape is : {X_val_split.shape} \n y_val_split shape is : {y_val_split.shape} ')
+
+
+# Save the preprocessed datasets as CSV files
+pd.DataFrame(X_train_split).to_csv('../data/ECG5000/X_train_split.csv', index=False)
+pd.DataFrame(X_val_split).to_csv('../data/ECG5000/X_val_split.csv', index=False)
+pd.DataFrame(y_train_split).to_csv('../data/ECG5000/y_train_split.csv', index=False)
+pd.DataFrame(y_val_split).to_csv('../data/ECG5000/y_val_split.csv', index=False)
+
+pd.DataFrame(X_test_normalized).to_csv('../data/ECG5000/X_test_normalized.csv', index=False)
+pd.DataFrame(y_test).to_csv('../data/ECG5000/y_test.csv', index=False)
